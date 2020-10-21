@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    //定时任务 scheduling-tasks
+    testImplementation 'org.awaitility:awaitility:3.1.2'
+    //thymeleaf模板
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    //登录拦截授权
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.springframework.security:spring-security-test'
+
+    //actuator 应用系统的自省和监控的集成功能，可以对应用系统进行配置查看、相关功能统计等。
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+test {
+    useJUnitPlatform()
+}

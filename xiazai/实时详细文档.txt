@@ -1,0 +1,26 @@
+2020-8-24 微信小程序 开发调试（实现在线体验性 实时更新）
+	勇杰和然哥开会讲解代码详细规范
+	登录注册评审 
+ 	后端开会与强哥确认微服务本地调试等内容
+	
+
+
+/ih/wxLogin 
+
+appid:wx07255a6d3230f43b
+
+secret:4c65959b68b5963fc91a509dfdd09756
+
+code:code
+
+encrypted:=data
+iv:
+
+
+微信正则表达式
+https://mp.weixin.qq.com/s?src=11&timestamp=1598347918&ver=2544&signature=5jOjMdQYxNPFEcUHhAmst8YfJCGltHAiNl2ySFlj2MX13b1tIswn*u4IPujI6PSpWCCi-zkEgGYkwyrBW4udY6ZlOSjMJQBa9X3mqjYaBPuzCti25WBN1TJTBAOySA8K&new=1
+
+
+
+
+强哥=-web项目=前端框架

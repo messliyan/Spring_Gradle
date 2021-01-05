@@ -1,0 +1,84 @@
+jekins所在机器安装	
+gradle 安装
+	gradlew clean build//远程调用来安装
+----------------------------------------
+现场环境
+nginx 安装----1.18.0
+镜像安装-----
+
+redis /Roekct  MQ /ELK(日志分析)	版本？安装？镜像里|还是主机上？
+
+postgresql -----psql (PostgreSQL) 12.3
+
+----------------------------------------
+docker 
+-----
+ wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.13-3.el7.x86_64.rpm  
+wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-19.03.13-3.el7.x86_64.rpm  
+wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.3.7-3.1.el7.x86_64.rpm  
+wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-selinux-17.03.2.ce-1.el7.centos.noarch.rpm       
+rpm -Uvh --force --nodeps *rpm
+----
+
+代理服务器  
+	192.168.28.10 ， 前置机1，   
+		NAT ？内网映射  
+			 网络工具  
+				telnet 远程桌面  
+				nmap  网络映射器	安全
+				 curl   
+				简单shell : /home/devops/init.sh    -----啥   
+				V2ray代理 -外网 ? 
+				 docker image hub ? 
+				jenkins node ? 
+				出口公网IP : 60.221.215.219 ？ 是否可以访问到主机 ？   
+
+	192.168.28.11 ， 前置机2  出口公网IP: 60.221.215.217 是否可以访问到主机 ？    
+
+	192.168.28.12 ， 前置机3  出口公网IP: 60.221.215.221 是否可以访问到主机 ？     
+内部服务器  
+	计算服务器  
+		10.76.152.93   
+		10.76.152.94    
+	数据服务器  
+		10.76.152.95   
+		10.76.152.96 （数据冗余备份）
+
+
+
+
+------------------------
+api docker 构建
+  docker build \
+                        --build-arg jre=${DOCKER_JRE_IMAGE} \
+                        -t ${DOCKER_REGISTRY_IMAGE_TARGET} \
+                        --pull=true \
+                        ${WORKSPACE}
+------
+不同版本不一样
+docker -v
+Docker version 19.03.12, build 48a66213fe
+------
+docker info
+
+-------------------------------------
+jenkins
+账号：admin 123456
+配置maven
+/usr/local/apache-maven-3.6.3/conf/settings.xml
+配置jdk =java11安装
+卸载openJdk=https://blog.csdn.net/qazzwx/article/details/94725938
+-------------https://blog.csdn.net/weixin_39984161/article/details/91447727
+echo $JAVA_HOME
+--------
+GIT配置
+----------------
+jenkis -- 安装 https://www.cnblogs.com/zhuyan521/p/10791121.html
+=========
+docker 
+安装 https://blog.csdn.net/weixin_45496075/article/details/109123709
+---------------------------------------
+jre 11镜像
+https://blog.csdn.net/hongtaolong/article/details/106816920
+
+docker build -t mydocker/java:11 .

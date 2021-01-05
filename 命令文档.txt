@@ -1,21 +1,25 @@
 ---------------------------------------------------
 PostgreSQL
 -----	psql --version
+su - postgres
+ls                   ----------查看版本号（12）
+ctrl+D              --------- 退出
+systemctl restart postgresql-12.service ----重启命令
 ------------------------------------------------
 Docker
 ------
-vi /etc/docker/daemon.json  
+vi /etc/docker/daemon.json
 {  “
-	registry-mirrors”: [“https://registry.docker-cn.com“]  
+	registry-mirrors”: [“https://registry.docker-cn.com“]
 }
 ------
-systemctl daemon-reload  
+systemctl daemon-reload
 systemctl restart docker
 
 docker search centos
 
 /etc/docker/daemon.json
- 
+
 docker search 192.168.1.8:5000
 docker run -d -i -t <imageID> /bin/bash
 docker attach db3 或者 docker attach d48b21a7e439	---少用
@@ -40,7 +44,7 @@ registry server; -e, --email="" Email; -p, --password="" Password; -u, --usernam
 docker push new-image-name
 
 sudo docker login --username=babaaliyum registry.cn-shanghai.aliyuncs.com
-password="123and45" 
+password="123and45"
 sudo docker pull registry.cn-shanghai.aliyuncs.com/jiabinli/owen:[镜像版本号]
 
 
@@ -60,8 +64,11 @@ killall nginx
 nginx -s reload
 vi /usr/local/nginx/conf/nginx.conf
 ------------------------------------
-gradle 
+gradle
 	gradlew clean build//远程调用来安装
 ------------------------------------
 dockerfile
 
+-----------------------------------
+磁盘
+df -h
